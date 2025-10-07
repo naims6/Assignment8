@@ -1,2 +1,14 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+@layer components {
+  .container2 {
+    @apply w-full max-w-[1400px] mx-auto px-[4%] md:px-[6%];
+  }
+}
+
+@layer utilities {
+  .active {
+    @apply border-b-2 border-purple-500;
+  }
+}
