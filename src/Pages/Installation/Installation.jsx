@@ -7,7 +7,7 @@ const Installation = () => {
   const [installedApps, setInstalledApps] = useState(() => getFromDb());
 
   return (
-    <div className="bg-[#D9D9D9]">
+    <div className="bg-[#d9d9d9c9]">
       <div className="container2 pt-16 pb-10">
         <Title
           title="Your Installed Apps"
@@ -25,7 +25,7 @@ const Installation = () => {
           </select>
         </div>
         {/* installed app */}
-        <div className="flex flex-col gap-4">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
           {/* first  */}
           {installedApps.map((app) => (
             <InstallAppCard app={app} setInstalledApps={setInstalledApps} />

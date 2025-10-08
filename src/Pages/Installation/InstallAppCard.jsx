@@ -8,7 +8,7 @@ const InstallAppCard = ({ app, setInstalledApps }) => {
 
   const { image, title, downloads, size, ratingAvg } = app;
   return (
-    <div className="bg-white p-3 rounded-md flex justify-between items-center">
+    <div className="bg-white p-3 rounded-xl flex justify-between items-center">
       {/* left side */}
       <div className="flex gap-5">
         <div className="size-20">
