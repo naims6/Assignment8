@@ -38,7 +38,7 @@ const Navbar = () => {
   return (
     <div className="bg-base-100 shadow-sm relative">
       <div className="flex w-full justify-between items-center min-h-[4rem] container2">
-        <Link to="/" className="navbar-start">
+        <Link to="/" className="navbar-start cursor-pointer">
           <figure className="mr-0.5">
             <img
               className="w-12 object-cover"
@@ -46,13 +46,17 @@ const Navbar = () => {
               alt="navbar logo"
             />
           </figure>
-          <button className="text-xl font-bold gradient-text">HERO.IO</button>
+          <span className="text-xl font-bold gradient-text">HERO.IO</span>
         </Link>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 space-x-7">{menuList}</ul>
         </div>
         <div className="navbar-end hidden lg:inline-flex">
-          <a className="btn [background:linear-gradient(30deg,#632EE3,#9F62F2)] text-white font-medium">
+          <a
+            href="https://github.com/naims6"
+            target="blank"
+            className="btn [background:linear-gradient(30deg,#632EE3,#9F62F2)] text-white font-medium"
+          >
             <FaGithub /> <span>Contribute</span>
           </a>
         </div>

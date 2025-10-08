@@ -1,0 +1,272 @@
+[
+  {
+    "id": 1,
+    "image": "https://img.icons8.com/color/512/google-play.png",
+    "title": "Hero App Store",
+    "companyName": "Hero Technologies",
+    "description": "Discover, download, and manage your favorite apps in one secure place. Hero App Store offers a clean UI, verified apps, and lightning-fast downloads.",
+    "size": 85,
+    "reviews": 2400,
+    "ratingAvg": 4.7,
+    "downloads": 1.2,
+    "ratings": [
+      { "name": "1 star", "count": 50 },
+      { "name": "2 star", "count": 80 },
+      { "name": "3 star", "count": 300 },
+      { "name": "4 star", "count": 900 },
+      { "name": "5 star", "count": 1070 }
+    ]
+  },
+  {
+    "id": 2,
+    "image": "https://img.icons8.com/color/512/spotify.png",
+    "title": "Spotify",
+    "companyName": "Spotify Ltd.",
+    "description": "Stream millions of songs and podcasts on any device. Personalized playlists and offline downloads for premium users.",
+    "size": 62,
+    "reviews": 5800,
+    "ratingAvg": 4.6,
+    "downloads": 25,
+    "ratings": [
+      { "name": "1 star", "count": 300 },
+      { "name": "2 star", "count": 450 },
+      { "name": "3 star", "count": 900 },
+      { "name": "4 star", "count": 1700 },
+      { "name": "5 star", "count": 2450 }
+    ]
+  },
+  {
+    "id": 3,
+    "image": "https://img.icons8.com/color/512/instagram-new.png",
+    "title": "Instagram",
+    "companyName": "Meta Platforms Inc.",
+    "description": "Share your photos, videos, and stories with the world. Connect with friends and follow your favorite creators.",
+    "size": 98,
+    "reviews": 9200,
+    "ratingAvg": 4.4,
+    "downloads": 35,
+    "ratings": [
+      { "name": "1 star", "count": 650 },
+      { "name": "2 star", "count": 800 },
+      { "name": "3 star", "count": 1200 },
+      { "name": "4 star", "count": 2900 },
+      { "name": "5 star", "count": 3650 }
+    ]
+  },
+  {
+    "id": 4,
+    "image": "https://img.icons8.com/color/512/telegram-app.png",
+    "title": "Telegram",
+    "companyName": "Telegram FZ LLC",
+    "description": "Fast, secure, and cloud-based messaging app with privacy-focused features and group chat capabilities.",
+    "size": 72,
+    "reviews": 3800,
+    "ratingAvg": 4.8,
+    "downloads": 12,
+    "ratings": [
+      { "name": "1 star", "count": 100 },
+      { "name": "2 star", "count": 200 },
+      { "name": "3 star", "count": 400 },
+      { "name": "4 star", "count": 1100 },
+      { "name": "5 star", "count": 2000 }
+    ]
+  },
+  {
+    "id": 5,
+    "image": "https://img.icons8.com/color/512/tiktok.png",
+    "title": "TikTok",
+    "companyName": "ByteDance",
+    "description": "Watch and create short videos with music, filters, and trending effects. Join the global creator community.",
+    "size": 95,
+    "reviews": 10400,
+    "ratingAvg": 4.3,
+    "downloads": 60,
+    "ratings": [
+      { "name": "1 star", "count": 900 },
+      { "name": "2 star", "count": 1100 },
+      { "name": "3 star", "count": 1700 },
+      { "name": "4 star", "count": 3300 },
+      { "name": "5 star", "count": 3400 }
+    ]
+  },
+  {
+    "id": 6,
+    "image": "https://img.icons8.com/color/512/youtube-play.png",
+    "title": "YouTube",
+    "companyName": "Google LLC",
+    "description": "Watch your favorite creators, discover trending videos, and upload your own content directly from your device.",
+    "size": 120,
+    "reviews": 15800,
+    "ratingAvg": 4.5,
+    "downloads": 80,
+    "ratings": [
+      { "name": "1 star", "count": 1100 },
+      { "name": "2 star", "count": 1300 },
+      { "name": "3 star", "count": 1800 },
+      { "name": "4 star", "count": 4200 },
+      { "name": "5 star", "count": 5400 }
+    ]
+  },
+  {
+    "id": 7,
+    "image": "https://img.icons8.com/color/512/twitterx.png",
+    "title": "X (Twitter)",
+    "companyName": "X Corp.",
+    "description": "Join the global conversation. Share updates, follow trends, and connect with millions around the world.",
+    "size": 78,
+    "reviews": 5100,
+    "ratingAvg": 4.2,
+    "downloads": 21,
+    "ratings": [
+      { "name": "1 star", "count": 400 },
+      { "name": "2 star", "count": 600 },
+      { "name": "3 star", "count": 900 },
+      { "name": "4 star", "count": 1600 },
+      { "name": "5 star", "count": 1600 }
+    ]
+  },
+  {
+    "id": 8,
+    "image": "https://img.icons8.com/color/512/facebook.png",
+    "title": "Facebook",
+    "companyName": "Meta Platforms Inc.",
+    "description": "Connect with friends and communities. Share updates, photos, and events on the world’s largest social network.",
+    "size": 90,
+    "reviews": 7800,
+    "ratingAvg": 4.1,
+    "downloads": 90,
+    "ratings": [
+      { "name": "1 star", "count": 800 },
+      { "name": "2 star", "count": 1000 },
+      { "name": "3 star", "count": 1300 },
+      { "name": "4 star", "count": 2100 },
+      { "name": "5 star", "count": 2600 }
+    ]
+  },
+  {
+    "id": 9,
+    "image": "https://img.icons8.com/color/512/amazon.png",
+    "title": "Amazon Shopping",
+    "companyName": "Amazon Mobile LLC",
+    "description": "Shop millions of products with fast delivery, secure payments, and personalized recommendations.",
+    "size": 80,
+    "reviews": 6700,
+    "ratingAvg": 4.6,
+    "downloads": 30,
+    "ratings": [
+      { "name": "1 star", "count": 400 },
+      { "name": "2 star", "count": 600 },
+      { "name": "3 star", "count": 800 },
+      { "name": "4 star", "count": 2000 },
+      { "name": "5 star", "count": 2900 }
+    ]
+  },
+  {
+    "id": 10,
+    "image": "https://img.icons8.com/color/512/netflix.png",
+    "title": "Netflix",
+    "companyName": "Netflix Inc.",
+    "description": "Stream award-winning TV shows, movies, and documentaries. Watch anywhere, anytime, on any device.",
+    "size": 125,
+    "reviews": 8900,
+    "ratingAvg": 4.8,
+    "downloads": 45,
+    "ratings": [
+      { "name": "1 star", "count": 200 },
+      { "name": "2 star", "count": 300 },
+      { "name": "3 star", "count": 600 },
+      { "name": "4 star", "count": 1800 },
+      { "name": "5 star", "count": 6000 }
+    ]
+  },
+  {
+    "id": 11,
+    "image": "https://img.icons8.com/color/512/whatsapp.png",
+    "title": "WhatsApp Messenger",
+    "companyName": "Meta Platforms Inc.",
+    "description": "Free messaging and calls. Secure, fast, and easy communication with friends and family worldwide.",
+    "size": 70,
+    "reviews": 13200,
+    "ratingAvg": 4.9,
+    "downloads": 90,
+    "ratings": [
+      { "name": "1 star", "count": 150 },
+      { "name": "2 star", "count": 250 },
+      { "name": "3 star", "count": 600 },
+      { "name": "4 star", "count": 2000 },
+      { "name": "5 star", "count": 10200 }
+    ]
+  },
+  {
+    "id": 12,
+    "image": "https://img.icons8.com/color/512/google-maps-new.png",
+    "title": "Google Maps",
+    "companyName": "Google LLC",
+    "description": "Navigate anywhere with live traffic, GPS tracking, and detailed maps for travel and exploration.",
+    "size": 110,
+    "reviews": 9400,
+    "ratingAvg": 4.7,
+    "downloads": 70,
+    "ratings": [
+      { "name": "1 star", "count": 400 },
+      { "name": "2 star", "count": 600 },
+      { "name": "3 star", "count": 1000 },
+      { "name": "4 star", "count": 2700 },
+      { "name": "5 star", "count": 4700 }
+    ]
+  },
+  {
+    "id": 13,
+    "image": "https://img.icons8.com/color/512/zoom.png",
+    "title": "Zoom",
+    "companyName": "Zoom Video Communications",
+    "description": "Join or host video meetings with HD quality, chat, and collaboration tools for teams and businesses.",
+    "size": 85,
+    "reviews": 4500,
+    "ratingAvg": 4.5,
+    "downloads": 17,
+    "ratings": [
+      { "name": "1 star", "count": 300 },
+      { "name": "2 star", "count": 400 },
+      { "name": "3 star", "count": 600 },
+      { "name": "4 star", "count": 1300 },
+      { "name": "5 star", "count": 1900 }
+    ]
+  },
+  {
+    "id": 14,
+    "image": "https://img.icons8.com/color/512/pinterest.png",
+    "title": "Pinterest",
+    "companyName": "Pinterest Inc.",
+    "description": "Find inspiration for everything — from recipes to fashion ideas. Save and organize your favorite pins easily.",
+    "size": 76,
+    "reviews": 3100,
+    "ratingAvg": 4.4,
+    "downloads": 14,
+    "ratings": [
+      { "name": "1 star", "count": 200 },
+      { "name": "2 star", "count": 300 },
+      { "name": "3 star", "count": 500 },
+      { "name": "4 star", "count": 1000 },
+      { "name": "5 star", "count": 1100 }
+    ]
+  },
+  {
+    "id": 15,
+    "image": "https://img.icons8.com/color/512/reddit.png",
+    "title": "Reddit",
+    "companyName": "Reddit Inc.",
+    "description": "Dive into discussions, memes, and trending communities. Reddit is your front page of the internet.",
+    "size": 82,
+    "reviews": 3700,
+    "ratingAvg": 4.3,
+    "downloads": 18,
+    "ratings": [
+      { "name": "1 star", "count": 300 },
+      { "name": "2 star", "count": 400 },
+      { "name": "3 star", "count": 700 },
+      { "name": "4 star", "count": 1100 },
+      { "name": "5 star", "count": 1200 }
+    ]
+  }
+]

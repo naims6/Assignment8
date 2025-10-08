@@ -19,11 +19,22 @@ const Hero = () => {
         <div className="flex gap-2 pb-10">
           <button className="flex items-center justify-center p-4 py-5 rounded-md gap-2 border border-gray-100 btn font-semibold hover:shadow-md transition-all duration-300">
             <img src="/Images/playstore.png" alt="" />
-            <span>Google Play</span>
+            <span>
+              <a
+                href="https://play.google.com/store/games?hl=en"
+                target="blank"
+              >
+                Google Play
+              </a>
+            </span>
           </button>
           <button className="flex items-center justify-center p-4 py-5 rounded-md gap-2 border border-gray-100 btn font-semibold hover:shadow-md transition duration-300">
             <img src="/Images/herostore.png" alt="" />
-            <span>App Store</span>
+            <span>
+              <a href="https://www.apple.com/app-store/" target="blank">
+                App Store
+              </a>
+            </span>
           </button>
         </div>
         <div>
