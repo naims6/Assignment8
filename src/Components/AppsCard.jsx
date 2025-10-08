@@ -1,12 +1,20 @@
 import React from "react";
+import { Link } from "react-router";
 
 const AppsCard = ({ app }) => {
+  const showAppDetails = (id) => {
+    alert(`show details ${id}`);
+  };
   return (
-    <div key={app.id} className="card bg-gray-100 p-6 shadow-md">
-      <figure>
-        <img className="w-[250px]" src={app.image} alt="Apps Logo" />
-      </figure>
-      <div className="">
+    <Link to={`/appdetails/${app.id}`}>
+      <div
+        key={app.id}
+        onClick={() => showAppDetails(app.id)}
+        className="card bg-gray-100 p-6 shadow-md"
+      >
+        <figure className="-m-3">
+          <img className="w-[210px]" src={app.image} alt="Apps Logo" />
+        </figure>
         <h2 className="text-2xl font-semibold my-5">{app.title}</h2>
         <div className="flex justify-between items-center">
           <p className="flex items-center justify-center gap-2 shadow bg-[#F1F5E8] px-2.5 py-2 rounded-md">
@@ -29,7 +37,7 @@ const AppsCard = ({ app }) => {
           </p>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
