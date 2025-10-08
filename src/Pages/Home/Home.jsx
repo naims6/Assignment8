@@ -1,10 +1,13 @@
 import React from "react";
-import Hero from "./Hero";
+
+import TrendingApps from "./TrendingApps";
+import Hero from "./Hero/Hero";
 
 const Home = () => {
   return (
     <div>
       <Hero />
+      <TrendingApps />
     </div>
   );
 };
