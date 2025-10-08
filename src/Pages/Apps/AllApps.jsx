@@ -59,9 +59,13 @@ const AllApps = () => {
       {/* all apps */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
         {/* card */}
-        {searchedApp.map((app) => (
-          <AppsCard key={app.id} app={app} />
-        ))}
+        {searchedApp.length === 0 ? (
+          <h1 className="col-span-full text-3xl mt-10 text-gray-800 font-bold text-center">
+            Ooops! App Not Found
+          </h1>
+        ) : (
+          searchedApp.map((app) => <AppsCard key={app.id} app={app} />)
+        )}
       </div>
     </div>
   );

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useParams } from "react-router";
 import { useYourData } from "../../Hooks/useYourData";
 import RatingChart from "./RatingChart";
+import { addToDb } from "../../Utility/addToDB";
 
 const AppDetails = () => {
   const [isInstalled, setIsInstalled] = useState(false);
@@ -9,6 +10,11 @@ const AppDetails = () => {
   const { id } = useParams();
 
   const matchedApp = allApps.find((app) => app.id == id) || {};
+
+  const handleInstallApp = (app) => {
+    setIsInstalled(true);
+    addToDb(app);
+  };
 
   const {
     companyName,
@@ -64,7 +70,7 @@ const AppDetails = () => {
           {/* install button */}
           <div className="-translate-y-2.5 pt-10 lg:pt-0 text-center lg:text-left">
             <button
-              onClick={() => setIsInstalled(true)}
+              onClick={() => handleInstallApp(matchedApp)}
               className="btn py-3 px-5 text-white bg-[#00D390]"
             >
               {isInstalled ? `Installed` : `Install Now (${size}Mb)`}
