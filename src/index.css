@@ -1,3 +1,6 @@
+/* google font inter*/
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
 @import "tailwindcss";
 @plugin "daisyui";
 
@@ -5,10 +8,20 @@
   .container2 {
     @apply w-full max-w-[1400px] mx-auto px-[4%] md:px-[6%];
   }
+  .gradient-text {
+    background: linear-gradient(90deg, #e855de, #5400ee);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
 }
 
 @layer utilities {
   .active {
-    @apply border-b-2 border-purple-500;
+    @apply border-b-4 border-purple-500;
+  }
+  .font-inter {
+    font-family: "Inter", sans-serif;
   }
 }
