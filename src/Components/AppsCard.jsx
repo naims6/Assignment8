@@ -2,16 +2,9 @@ import React from "react";
 import { Link } from "react-router";
 
 const AppsCard = ({ app }) => {
-  const showAppDetails = (id) => {
-    alert(`show details ${id}`);
-  };
   return (
     <Link to={`/appdetails/${app.id}`}>
-      <div
-        key={app.id}
-        onClick={() => showAppDetails(app.id)}
-        className="card bg-gray-100 p-6 shadow-md"
-      >
+      <div key={app.id} className="card bg-gray-100 p-6 shadow-md">
         <figure className="-m-3">
           <img className="w-[210px]" src={app.image} alt="Apps Logo" />
         </figure>
@@ -33,7 +26,9 @@ const AppsCard = ({ app }) => {
               src="/public/Images/icon-ratings.png"
               alt=""
             />
-            <span className="text-[#FF8811] font-semibold">{app.reviews}</span>
+            <span className="text-[#FF8811] font-semibold">
+              {app.ratingAvg}
+            </span>
           </p>
         </div>
       </div>

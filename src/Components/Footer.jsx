@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router";
 
 const Footer = () => {
   return (
-    <footer className="footer footer-horizontal footer-center bg-base-200 text-base-content rounded p-10">
+    <footer className="footer footer-horizontal footer-center bg-gray-900 text-gray-200 mt-10 rounded p-10">
       <ul className="grid grid-flow-col gap-4">
         <Link to="/">
           <li className="py-3 border-b border-gray-500 lg:border-none lg:py-2">
