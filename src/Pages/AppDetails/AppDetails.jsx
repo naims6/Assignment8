@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router";
 import { useYourData } from "../../Hooks/useYourData";
 import RatingChart from "./RatingChart";
 
 const AppDetails = () => {
+  const [isInstalled, setIsInstalled] = useState(false);
   const [allApps] = useYourData();
   const { id } = useParams();
 
@@ -62,8 +63,11 @@ const AppDetails = () => {
           </div>
           {/* install button */}
           <div className="-translate-y-2.5 pt-10 lg:pt-0 text-center lg:text-left">
-            <button className="btn py-3 px-5 text-white bg-[#00D390]">
-              Install Now ({size}Mb)
+            <button
+              onClick={() => setIsInstalled(true)}
+              className="btn py-3 px-5 text-white bg-[#00D390]"
+            >
+              {isInstalled ? `Installed` : `Install Now (${size}Mb)`}
             </button>
           </div>
         </div>
