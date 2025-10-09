@@ -2,7 +2,7 @@ const NotFoundApp = ({ setSearchingApp, searchingApp }) => {
   return (
     <div className="container2 text-center col-span-full flex flex-col items-center justify-center gap-7">
       <h1 className="text-bold text-5xl text-[#001931]">
-        {`"${searchingApp}" not Found !`}
+        {`No App Found for '${searchingApp}'`}
       </h1>
       <p className="text-[#627382]">
         The App you are requesting is not found on our system. please try
