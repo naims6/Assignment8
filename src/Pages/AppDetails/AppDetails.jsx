@@ -1,19 +1,21 @@
-import React, { useState } from "react";
 import { useParams } from "react-router";
 import { useYourData } from "../../Hooks/useYourData";
 import RatingChart from "./RatingChart";
 import { addToDb } from "../../Utility/addToDB";
+import { toast } from "react-toastify";
 
 const AppDetails = () => {
-  const [isInstalled, setIsInstalled] = useState(false);
   const [allApps] = useYourData();
   const { id } = useParams();
 
   const matchedApp = allApps.find((app) => app.id == id) || {};
 
   const handleInstallApp = (app) => {
-    setIsInstalled(true);
+    matchedApp.installed = true;
     addToDb(app);
+    console.log(matchedApp);
+    // if (app.installed === true) return;
+    toast.success(`${app.title} Installed`);
   };
 
   const {
@@ -26,6 +28,7 @@ const AppDetails = () => {
     ratings,
     reviews,
     size,
+    installed,
   } = matchedApp;
 
   return (
@@ -73,7 +76,7 @@ const AppDetails = () => {
               onClick={() => handleInstallApp(matchedApp)}
               className="btn py-3 px-5 text-white bg-[#00D390]"
             >
-              {isInstalled ? `Installed` : `Install Now (${size}Mb)`}
+              {installed ? `Installed` : `Install Now (${size}Mb)`}
             </button>
           </div>
         </div>

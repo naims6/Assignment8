@@ -6,6 +6,7 @@ const useYourData = () => {
   const [err, setErr] = useState(true);
 
   useEffect(() => {
+    setLoading(true);
     fetch("/appData.json")
       .then((res) => res.json())
       .then((d) => setData(d))

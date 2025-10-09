@@ -8,7 +8,7 @@ const Installation = () => {
 
   return (
     <div className="bg-[#d9d9d9c9]">
-      <div className="container2 pt-16 pb-10">
+      <div className="container2 pt-12 pb-8">
         <Title
           title="Your Installed Apps"
           description="Explore All Trending Apps on the Market developed by us"

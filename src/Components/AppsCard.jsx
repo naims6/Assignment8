@@ -4,7 +4,7 @@ import { Link } from "react-router";
 const AppsCard = ({ app }) => {
   return (
     <Link to={`/appdetails/${app.id}`}>
-      <div key={app.id} className="card bg-gray-100 p-6 shadow-md">
+      <div key={app.id} className="card bg-gray-100 p-6 shadow-md w-full">
         <figure className="-m-3">
           <img className="w-[210px]" src={app.image} alt="Apps Logo" />
         </figure>

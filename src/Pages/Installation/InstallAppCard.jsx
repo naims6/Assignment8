@@ -1,9 +1,11 @@
 import React from "react";
 import { removeFromDb } from "../../Utility/addToDB";
+import { toast } from "react-toastify";
 
 const InstallAppCard = ({ app, setInstalledApps }) => {
   const handleUnstallApp = () => {
     setInstalledApps(removeFromDb(app));
+    toast.success(`${app.title} Unstalled`);
   };
 
   const { image, title, downloads, size, ratingAvg } = app;
