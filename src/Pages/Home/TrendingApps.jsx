@@ -5,7 +5,7 @@ import AppsCard from "../../Components/AppsCard";
 import { Link } from "react-router";
 
 const TrendingApps = () => {
-  const [appData] = useYourData();
+  const [appData, isLoading] = useYourData();
   const trendingApps = appData.slice(0, 8);
 
   return (
@@ -18,11 +18,17 @@ const TrendingApps = () => {
             description="Explore All Trending Apps on the Market developed by us"
           />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7">
-          {trendingApps.map((app) => (
-            <AppsCard key={app.id} app={app} />
-          ))}
-        </div>
+
+        {isLoading ? (
+          <h1 className="text-center text-5xl text-red-600">Loading...</h1>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7">
+            {trendingApps.map((app) => (
+              <AppsCard key={app.id} app={app} />
+            ))}
+          </div>
+        )}
+
         {/* show more button */}
         <div className="text-center pt-10">
           <Link

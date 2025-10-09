@@ -1,11 +1,31 @@
 import AppsCard from "../../Components/AppsCard";
 import NotFoundApp from "./NotFoundApp";
 import SearchNotFound from "./SearchNotFound";
-const AllApps = ({ searchedApp, isLoading, setSearchingApp, searchingApp }) => {
+const AllApps = ({
+  searchedApp,
+  isLoading,
+  setSearchingApp,
+  searchingApp,
+  searchLoading,
+}) => {
   if (isLoading) {
     return (
-      <div className="text-center">
-        <span className="loading loading-spinner loading-xl"></span>
+      <div className="text-center mt-5">
+        <h1 className="text-center font-bold text-6xl text-red-500">
+          LOADING...
+        </h1>
+      </div>
+    );
+  }
+
+  console.log(searchLoading);
+
+  if (searchLoading) {
+    return (
+      <div className="text-center mt-5">
+        <h1 className="text-center font-bold text-6xl text-green-500">
+          LOADING...
+        </h1>
       </div>
     );
   }

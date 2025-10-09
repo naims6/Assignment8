@@ -6,10 +6,19 @@ import { useYourData } from "../../Hooks/useYourData";
 const Apps = () => {
   const [Apps, isLoading] = useYourData();
   const [searchingApp, setSearchingApp] = useState("");
+  const [searchLoading, setSearchLoading] = useState(false);
 
   // why not working
   // const [myApp, setMyApp] = useState(Apps);
   // console.log(myApp);
+
+  const handleSearchApp = (e) => {
+    setSearchLoading(true);
+    setSearchingApp(e.target.value);
+    setTimeout(() => {
+      setSearchLoading(false);
+    }, 300);
+  };
 
   const searchedApp =
     searchingApp.length === 0
@@ -19,6 +28,7 @@ const Apps = () => {
             .toLowerCase()
             .includes(searchingApp.toLocaleLowerCase().trim())
         );
+
   return (
     <div className="container2 py-5 lg:py-10">
       <Title
@@ -49,9 +59,8 @@ const Apps = () => {
           </svg>
           <input
             value={searchingApp}
-            onChange={(e) => setSearchingApp(e.target.value)}
+            onChange={(e) => handleSearchApp(e)}
             type="search"
-            className=""
             required
             placeholder="Search"
           />
@@ -62,6 +71,7 @@ const Apps = () => {
         searchedApp={searchedApp}
         setSearchingApp={setSearchingApp}
         isLoading={isLoading}
+        searchLoading={searchLoading}
       />
     </div>
   );
