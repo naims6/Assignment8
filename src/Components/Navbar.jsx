@@ -1,13 +1,15 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FaGithub } from "react-icons/fa";
-import { MdMenu } from "react-icons/md";
+import { MdClose, MdMenu } from "react-icons/md";
 import { Link, NavLink } from "react-router";
 import MobileNavbar from "./MobileNavbar";
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   // handle menu click
   const mobileNavRef = useRef();
   const handleMenuClick = () => {
+    setIsMenuOpen((prev) => !prev);
     if (mobileNavRef.current.classList.contains("left-[150%]")) {
       mobileNavRef.current.classList.remove("left-[150%]");
       mobileNavRef.current.classList.add("left-1/2");
@@ -16,6 +18,28 @@ const Navbar = () => {
       mobileNavRef.current.classList.add("left-[150%]");
     }
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isMenuOpen && !mobileNavRef.current.contains(event.target)) {
+        setIsMenuOpen((prev) => !prev);
+        mobileNavRef.current.classList.remove("left-1/2");
+        mobileNavRef.current.classList.add("left-[150%]");
+      }
+      console.log(
+        isMenuOpen,
+        event.target,
+        mobileNavRef.current,
+        !mobileNavRef.current.contains(event.target)
+      );
+    };
+
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [isMenuOpen]);
 
   const menuList = (
     <>
@@ -60,11 +84,19 @@ const Navbar = () => {
             <FaGithub /> <span>Contribute</span>
           </a>
         </div>
-        <MdMenu
-          onClick={handleMenuClick}
-          className="lg:hidden cursor-pointer"
-          size={24}
-        />
+        {isMenuOpen ? (
+          <MdClose
+            onClick={handleMenuClick}
+            className="lg:hidden cursor-pointer"
+            size={24}
+          />
+        ) : (
+          <MdMenu
+            onClick={handleMenuClick}
+            className="lg:hidden cursor-pointer"
+            size={24}
+          />
+        )}
       </div>
       <MobileNavbar mobileNavRef={mobileNavRef} menuList={menuList} />
     </div>

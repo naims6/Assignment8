@@ -36,12 +36,11 @@ const Installation = () => {
             ({sortingApp().length}) Apps Found
           </h1>
           <select
+            defaultValue="srt"
             onChange={(e) => setSortType(e.target.value)}
             className="border font-semibold bg-white border-gray-500 rounded-md py-2.5 px-2 outline-none"
           >
-            <option disabled selected>
-              Sort by Size
-            </option>
+            <option value="srt">Sort by Size</option>
             <option value="ltoh">Low - High</option>
             <option value="htol">High - Low</option>
           </select>
