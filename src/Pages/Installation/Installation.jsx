@@ -8,9 +8,16 @@ const Installation = () => {
   const [sortType, setSortType] = useState("");
 
   const sortingApp = () => {
-    if (sortType == "size") {
-      const sortBySize = [...installedApps].sort((a, b) => a.size - b.size);
-      return sortBySize;
+    if (sortType == "ltoh") {
+      const sortByLowToHigh = [...installedApps].sort(
+        (a, b) => a.downloads - b.downloads
+      );
+      return sortByLowToHigh;
+    } else if (sortType == "htol") {
+      const sortByHighToLow = [...installedApps].sort(
+        (a, b) => b.downloads - a.downloads
+      );
+      return sortByHighToLow;
     } else {
       return installedApps;
     }
@@ -30,21 +37,21 @@ const Installation = () => {
           </h1>
           <select
             onChange={(e) => setSortType(e.target.value)}
-            className="border border-gray-500 rounded-md py-2.5 px-4 outline-none"
+            className="border font-semibold bg-white border-gray-500 rounded-md py-2.5 px-2 outline-none"
           >
-            <option disabled value="Sort">
-              Sort
+            <option disabled selected>
+              Sort by Size
             </option>
-            <option value="size">Sort by Size</option>
-            <option value="b">Sort by Ratings</option>
-            <option value="c">Sort by Nothing</option>
+            <option value="ltoh">Low - High</option>
+            <option value="htol">High - Low</option>
           </select>
         </div>
         {/* installed app */}
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
           {/* card  */}
-          {sortingApp().map((app) => (
+          {sortingApp().map((app, index) => (
             <InstallAppCard
+              index={index}
               key={app.id}
               app={app}
               setInstalledApps={setInstalledApps}

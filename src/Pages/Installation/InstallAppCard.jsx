@@ -2,7 +2,7 @@ import React from "react";
 import { removeFromDb } from "../../Utility/addToDB";
 import { toast } from "react-toastify";
 
-const InstallAppCard = ({ app, setInstalledApps }) => {
+const InstallAppCard = ({ app, setInstalledApps, index }) => {
   const handleUnstallApp = () => {
     setInstalledApps(removeFromDb(app));
     toast.success(`${app.title} Unstalled`);
@@ -13,7 +13,8 @@ const InstallAppCard = ({ app, setInstalledApps }) => {
     <div className="bg-white p-3 rounded-xl flex justify-between items-center">
       {/* left side */}
       <div className="flex gap-5">
-        <div className="size-20">
+        <div className="size-20 flex gap-2 text-gray-800 font-semibold justify-center ml-2">
+          <span className="text-xl">{index + 1}.</span>
           <img className="w-full rounded-md " src={image} alt="" />
         </div>
         <div className="flex flex-col gap-3">
