@@ -50,7 +50,7 @@ const Installation = () => {
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
           {/* card  */}
           {sortingApp().length === 0 ? (
-            <h1 className="text-center mt-2.5 font-2xl">
+            <h1 className="text-center mt-4 col-span-full text-3xl">
               No Installed App Found.
             </h1>
           ) : (

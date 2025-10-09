@@ -1,13 +1,13 @@
 import { useParams } from "react-router";
 import { useYourData } from "../../Hooks/useYourData";
 import RatingChart from "./RatingChart";
-import { addToDb } from "../../Utility/addToDB";
+import { addToDb, getFromDb } from "../../Utility/addToDB";
 import { toast } from "react-toastify";
-import { useRef } from "react";
+import { useEffect, useState } from "react";
 import NotFoundApp from "../Apps/NotFoundApp";
 
 const AppDetails = () => {
-  const installBtnRef = useRef();
+  const [isInstalled, setIsInstalled] = useState(false);
   const [allApps] = useYourData();
   const { id } = useParams();
 
@@ -15,11 +15,19 @@ const AppDetails = () => {
   const matchedApp = allApps.find((app) => app.id == id) || {};
 
   const handleInstallApp = (app) => {
-    matchedApp.installed = true;
+    setIsInstalled(true);
+
     addToDb(app);
-    installBtnRef.current.disabled = true;
     toast.success(`${app.title} Installed`);
   };
+
+  useEffect(() => {
+    const data = getFromDb();
+    const isExist = data.find((app) => app.id == id);
+    if (isExist) {
+      setIsInstalled(true);
+    }
+  }, [id]);
 
   const {
     companyName,
@@ -31,7 +39,6 @@ const AppDetails = () => {
     ratings,
     reviews,
     size,
-    installed,
   } = matchedApp;
 
   if (!isFound) {
@@ -85,11 +92,13 @@ const AppDetails = () => {
           {/* install button */}
           <div className="-translate-y-2.5 pt-10 mt-0 lg:mt-5 lg:pt-0 text-center lg:text-left">
             <button
-              ref={installBtnRef}
+              disabled={isInstalled}
               onClick={() => handleInstallApp(matchedApp)}
-              className="py-3.5 px-6 text-white text-base lg:text-xl font-bold bg-[#00D390] cursor-pointer rounded-md shadow"
+              className={`${
+                isInstalled ? "bg-[#00d390d0]" : "bg-[#00D390]"
+              } py-3.5 px-6 text-white text-base lg:text-xl font-bold  cursor-pointer rounded-md shadow`}
             >
-              {installed ? `Installed` : `Install Now (${size}Mb)`}
+              {isInstalled ? `Installed` : `Install Now (${size}Mb)`}
             </button>
           </div>
         </div>
