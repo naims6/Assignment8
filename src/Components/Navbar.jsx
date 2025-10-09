@@ -20,7 +20,7 @@ const Navbar = () => {
   const menuList = (
     <>
       <NavLink to="/">
-        <li className="py-3 border-b border-gray-500 lg:border-none lg:py-2">
+        <li className="flex py-3 border-b border-gray-500 lg:border-none lg:py-2">
           Home
         </li>
       </NavLink>

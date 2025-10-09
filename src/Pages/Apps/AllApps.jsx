@@ -1,7 +1,7 @@
 import AppsCard from "../../Components/AppsCard";
 import NotFoundApp from "./NotFoundApp";
 
-const AllApps = ({ searchedApp, isLoading }) => {
+const AllApps = ({ searchedApp, isLoading, setSearchingApp }) => {
   if (isLoading) {
     return (
       <div className="text-center">
@@ -16,7 +16,7 @@ const AllApps = ({ searchedApp, isLoading }) => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
         {/* card */}
         {searchedApp.length === 0 ? (
-          <NotFoundApp />
+          <NotFoundApp setSearchingApp={setSearchingApp} />
         ) : (
           searchedApp.map((app) => <AppsCard key={app.id} app={app} />)
         )}

@@ -5,6 +5,16 @@ import InstallAppCard from "./InstallAppCard";
 
 const Installation = () => {
   const [installedApps, setInstalledApps] = useState(() => getFromDb());
+  const [sortType, setSortType] = useState("");
+
+  const sortingApp = () => {
+    if (sortType == "size") {
+      const sortBySize = [...installedApps].sort((a, b) => a.size - b.size);
+      return sortBySize;
+    } else {
+      return installedApps;
+    }
+  };
 
   return (
     <div className="bg-[#d9d9d9c9]">
@@ -16,19 +26,29 @@ const Installation = () => {
         {/* sorting actions */}
         <div className="flex flex-col lg:flex-row gap-3.5 items-center justify-between pt-10 pb-4">
           <h1 className="text-2xl text-[#001931] font-semibold">
-            ({installedApps.length}) Apps Found
+            ({sortingApp().length}) Apps Found
           </h1>
-          <select className="border border-gray-500 rounded-md py-2.5 px-4 outline-none">
-            <option value="a">Sort by Size</option>
-            <option value="a">Sort by Ratings</option>
-            <option value="a">Sort by Nothing</option>
+          <select
+            onChange={(e) => setSortType(e.target.value)}
+            className="border border-gray-500 rounded-md py-2.5 px-4 outline-none"
+          >
+            <option disabled value="Sort">
+              Sort
+            </option>
+            <option value="size">Sort by Size</option>
+            <option value="b">Sort by Ratings</option>
+            <option value="c">Sort by Nothing</option>
           </select>
         </div>
         {/* installed app */}
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
-          {/* first  */}
-          {installedApps.map((app) => (
-            <InstallAppCard app={app} setInstalledApps={setInstalledApps} />
+          {/* card  */}
+          {sortingApp().map((app) => (
+            <InstallAppCard
+              key={app.id}
+              app={app}
+              setInstalledApps={setInstalledApps}
+            />
           ))}
         </div>
       </div>

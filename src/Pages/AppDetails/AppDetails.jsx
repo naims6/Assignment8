@@ -3,8 +3,10 @@ import { useYourData } from "../../Hooks/useYourData";
 import RatingChart from "./RatingChart";
 import { addToDb } from "../../Utility/addToDB";
 import { toast } from "react-toastify";
+import { useRef } from "react";
 
 const AppDetails = () => {
+  const installBtnRef = useRef();
   const [allApps] = useYourData();
   const { id } = useParams();
 
@@ -13,8 +15,7 @@ const AppDetails = () => {
   const handleInstallApp = (app) => {
     matchedApp.installed = true;
     addToDb(app);
-    console.log(matchedApp);
-    // if (app.installed === true) return;
+    installBtnRef.current.disabled = true;
     toast.success(`${app.title} Installed`);
   };
 
@@ -73,8 +74,9 @@ const AppDetails = () => {
           {/* install button */}
           <div className="-translate-y-2.5 pt-10 lg:pt-0 text-center lg:text-left">
             <button
+              ref={installBtnRef}
               onClick={() => handleInstallApp(matchedApp)}
-              className="btn py-3 px-5 text-white bg-[#00D390]"
+              className="py-3.5 px-6 text-white text-xl font-bold bg-[#00D390] cursor-pointer rounded-md"
             >
               {installed ? `Installed` : `Install Now (${size}Mb)`}
             </button>
