@@ -12,7 +12,7 @@ const MainLayout = () => {
         <Outlet />
       </div>
       <Footer />
-      <ToastContainer />
+      <ToastContainer position="top-center" autoClose={5000} />
     </div>
   );
 };

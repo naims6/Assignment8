@@ -14,8 +14,8 @@ const ErrorPage = () => {
         The page you are looking for is not available.
       </p>
       <Link to="/">
-        <button className="btn px-7 w-fit mb-7 text-white bg-[linear-gradient(45deg,_#e855de,_#5400ee)]">
-          Go Back
+        <button className="px-7 w-fit mb-7 cursor-pointer py-3.5 rounded-md text-white font-bold bg-[linear-gradient(45deg,_#e855de,_#5400ee)]">
+          Back to Home
         </button>
       </Link>
     </div>

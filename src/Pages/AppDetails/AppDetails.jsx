@@ -4,12 +4,14 @@ import RatingChart from "./RatingChart";
 import { addToDb } from "../../Utility/addToDB";
 import { toast } from "react-toastify";
 import { useRef } from "react";
+import NotFoundApp from "../Apps/NotFoundApp";
 
 const AppDetails = () => {
   const installBtnRef = useRef();
   const [allApps] = useYourData();
   const { id } = useParams();
 
+  const isFound = allApps.find((app) => app.id == id);
   const matchedApp = allApps.find((app) => app.id == id) || {};
 
   const handleInstallApp = (app) => {
@@ -32,6 +34,10 @@ const AppDetails = () => {
     installed,
   } = matchedApp;
 
+  if (!isFound) {
+    return <NotFoundApp />;
+  }
+
   return (
     <div className="bg-base-200 pt-16">
       <div className="flex gap-12 container2 flex-col lg:flex-row">
@@ -43,7 +49,9 @@ const AppDetails = () => {
             <h1 className="text-3xl font-bold">{title}</h1>
             <p className="py-3 text-[#627382]">
               Developed by :{" "}
-              <span className="text-[#9F62F2]">{companyName}</span>
+              <span className="text-[#9F62F2] font-semibold">
+                {companyName}
+              </span>
             </p>
           </div>
           {/* app state */}
@@ -87,10 +95,10 @@ const AppDetails = () => {
       <div className="container2 mt-10">
         <RatingChart ratings={ratings} />
         {/*app description  */}
-        <h1 className="text-2xl font-bold text-[#001931] mb-4 mt-20">
+        <h1 className="text-2xl font-bold text-[#001931] mb-4 pt-5">
           Description
         </h1>
-        <p className="text-gray-600">{description}</p>
+        <p className="text-gray-600 pb-12">{description}</p>
       </div>
     </div>
   );

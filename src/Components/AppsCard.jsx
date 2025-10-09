@@ -3,7 +3,7 @@ import { Link } from "react-router";
 
 const AppsCard = ({ app }) => {
   return (
-    <Link to={`/appdetails/${app.id}`}>
+    <Link to={`/apps/${app.id}`}>
       <div
         key={app.id}
         className="card bg-gray-100 p-6 shadow-md w-full hover:-translate-y-2.5 transition-all duration-300"
