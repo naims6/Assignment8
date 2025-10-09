@@ -24,14 +24,14 @@ const Installation = () => {
   };
 
   return (
-    <div className="bg-[#d9d9d9c9]">
-      <div className="container2 pt-12 pb-8">
+    <div className="bg-[#d9d9d9c9] min-h-[70vh]">
+      <div className="container2 pt-5 lg:pt-12 pb-8">
         <Title
           title="Your Installed Apps"
           description="Explore All Trending Apps on the Market developed by us"
         />
         {/* sorting actions */}
-        <div className="flex flex-col lg:flex-row gap-3.5 items-center justify-between pt-10 pb-4">
+        <div className="flex flex-col lg:flex-row gap-3.5 items-center justify-between pt-6 lg:pt-10 pb-4">
           <h1 className="text-2xl text-[#001931] font-semibold">
             ({sortingApp().length}) Apps Found
           </h1>
@@ -49,14 +49,20 @@ const Installation = () => {
         {/* installed app */}
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
           {/* card  */}
-          {sortingApp().map((app, index) => (
-            <InstallAppCard
-              index={index}
-              key={app.id}
-              app={app}
-              setInstalledApps={setInstalledApps}
-            />
-          ))}
+          {sortingApp().length === 0 ? (
+            <h1 className="text-center mt-2.5 font-2xl">
+              No Installed App Found.
+            </h1>
+          ) : (
+            sortingApp().map((app, index) => (
+              <InstallAppCard
+                index={index}
+                key={app.id}
+                app={app}
+                setInstalledApps={setInstalledApps}
+              />
+            ))
+          )}
         </div>
       </div>
     </div>

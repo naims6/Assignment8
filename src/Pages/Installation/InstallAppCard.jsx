@@ -13,33 +13,35 @@ const InstallAppCard = ({ app, setInstalledApps, index }) => {
     <div className="bg-white p-3 rounded-xl flex justify-between items-center">
       {/* left side */}
       <div className="flex gap-5">
-        <div className="size-20 flex gap-2 text-gray-800 font-semibold justify-center ml-2">
+        <div className="size-15 lg:size-20 flex gap-2 text-gray-800 font-semibold justify-center ml-2">
           <span className="text-xl">{index + 1}.</span>
-          <img className="w-full rounded-md " src={image} alt="" />
+          <img className="w-full rounded-md object-cover" src={image} alt="" />
         </div>
         <div className="flex flex-col gap-3">
-          <h2 className="font-semibold text-[22px]">{title}</h2>
+          <h2 className="font-semibold text-lg lg:text-[22px]">{title}</h2>
           <div className="flex justify-between items-center">
-            <div className="flex gap-3">
-              <span className="text-[#00D390] flex items-center gap-2 ">
+            <div className="flex gap-2.5">
+              <span className="text-[#00D390] flex items-center gap-2 text-sm lg:text-base">
                 {" "}
                 <img
-                  src="/public/Images/icon-downloads.png"
+                  src="/Images/icon-downloads.png"
                   className="size-4"
                   alt=""
                 />{" "}
                 {downloads}M
               </span>
-              <span className="text-[#FF8811] flex items-center gap-2 ">
+              <span className="text-[#FF8811] flex items-center gap-2 text-sm lg:text-base">
                 {" "}
                 <img
-                  src="/public/Images/icon-ratings.png"
+                  src="/Images/icon-ratings.png"
                   className="size-4"
                   alt=""
                 />{" "}
                 {ratingAvg}
               </span>
-              <span className="text-[#627382]">{size} MB</span>
+              <span className="text-[#627382] text-sm lg:text-base">
+                {size} MB
+              </span>
             </div>
           </div>
         </div>

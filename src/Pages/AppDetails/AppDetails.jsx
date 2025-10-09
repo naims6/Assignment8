@@ -39,10 +39,13 @@ const AppDetails = () => {
   }
 
   return (
-    <div className="bg-base-200 pt-16">
+    <div className="bg-base-200 pt-9 lg:pt-16">
       <div className="flex gap-12 container2 flex-col lg:flex-row">
-        <figure className="max-w-sm rounded-lg">
-          <img src={image} className="max-w-sm rounded-lg shadow-2xl" />
+        <figure className="w-full max-w-[345px] lg:max-w-sm mx-auto rounded-lg">
+          <img
+            src={image}
+            className="w-full max-w-[345px] lg:max-w-sm rounded-lg shadow-2xl"
+          />
         </figure>
         <div className="w-full flex flex-col justify-between">
           <div className="border-b border-gray-300 pb-2">
@@ -80,11 +83,11 @@ const AppDetails = () => {
             </div>
           </div>
           {/* install button */}
-          <div className="-translate-y-2.5 pt-10 lg:pt-0 text-center lg:text-left">
+          <div className="-translate-y-2.5 pt-10 mt-0 lg:mt-5 lg:pt-0 text-center lg:text-left">
             <button
               ref={installBtnRef}
               onClick={() => handleInstallApp(matchedApp)}
-              className="py-3.5 px-6 text-white text-xl font-bold bg-[#00D390] cursor-pointer rounded-md"
+              className="py-3.5 px-6 text-white text-base lg:text-xl font-bold bg-[#00D390] cursor-pointer rounded-md shadow"
             >
               {installed ? `Installed` : `Install Now (${size}Mb)`}
             </button>
@@ -92,10 +95,10 @@ const AppDetails = () => {
         </div>
       </div>
       {/* ratings recharts and descripion */}
-      <div className="container2 mt-10">
+      <div className="container2 mt-6 lg:mt-10">
         <RatingChart ratings={ratings} />
         {/*app description  */}
-        <h1 className="text-2xl font-bold text-[#001931] mb-4 pt-5">
+        <h1 className="text-2xl font-bold text-[#001931] mb-4 pt-3.5 lg:pt-5">
           Description
         </h1>
         <p className="text-gray-600 pb-12">{description}</p>

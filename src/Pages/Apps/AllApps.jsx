@@ -11,7 +11,7 @@ const AllApps = ({ searchedApp, isLoading, setSearchingApp, searchingApp }) => {
   }
 
   return (
-    <div className="pt-10 pb-6 container2">
+    <div className="pt-6 lg:pt-10 pb-5 lg:pb-6 container2">
       {/* all apps */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
         {/* card */}

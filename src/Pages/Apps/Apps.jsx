@@ -15,16 +15,18 @@ const Apps = () => {
     searchingApp.length === 0
       ? Apps
       : Apps.filter((app) =>
-          app.title.toLowerCase().includes(searchingApp.toLocaleLowerCase())
+          app.title
+            .toLowerCase()
+            .includes(searchingApp.toLocaleLowerCase().trim())
         );
   return (
-    <div className="container2 py-10">
+    <div className="container2 py-5 lg:py-10">
       <Title
         title="Our All Applications"
         description="Explore All Apps on the Market developed by us. We code for Millions"
       />
       {/* search apps */}
-      <div className="container2 flex flex-col lg:flex-row gap-3.5 items-center justify-between pt-10 pb-4">
+      <div className="container2 flex flex-col lg:flex-row gap-3.5 items-center justify-between pt-6 lg:pt-10 pb-4">
         <h1 className="text-2xl text-[#001931] font-semibold">
           ({searchedApp.length}) Apps Found
         </h1>
