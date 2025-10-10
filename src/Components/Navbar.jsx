@@ -1,8 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
-import { FaGithub } from "react-icons/fa";
-import { MdClose, MdMenu } from "react-icons/md";
+import { FaAppStore, FaGithub } from "react-icons/fa";
+import { MdClose, MdInstallDesktop, MdMenu } from "react-icons/md";
 import { Link, NavLink } from "react-router";
 import MobileNavbar from "./MobileNavbar";
+import { CiHome } from "react-icons/ci";
+import { CgHome } from "react-icons/cg";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -37,18 +39,30 @@ const Navbar = () => {
   const menuList = (
     <>
       <NavLink to="/" onClick={handleNavLinkClick}>
-        <li className="flex py-3 border-b border-gray-500 lg:border-none lg:py-2 lg:hover:bg-gray-200/50 hover:bg-gray-100/20 rounded-md transition-all duration-300 px-5 lg:text-gray-900 font-semibold text-gray-200">
-          Home
+        <li className="py-3 flex items-center gap-1.5 border-b border-gray-500 lg:border-none lg:py-2 lg:hover:bg-gray-200/50 hover:bg-gray-100/20 rounded-md transition-all duration-200 px-5 lg:text-gray-900 font-semibold text-gray-200">
+          <span className="-translate-y-0.5">
+            <CgHome size={15} color={`${isMenuOpen ? "#fff" : "#000"}`} />
+          </span>
+          <span>Home</span>
         </li>
       </NavLink>
       <NavLink to="/apps" onClick={handleNavLinkClick}>
-        <li className="py-3 border-b border-gray-500 lg:border-none lg:py-2 lg:hover:bg-gray-200/50 hover:bg-gray-100/20 rounded-md transition-all duration-200 px-5 lg:text-gray-900 font-semibold text-gray-200">
-          Apps
+        <li className="py-3 flex items-center gap-1.5 border-b border-gray-500 lg:border-none lg:py-2 lg:hover:bg-gray-200/50 hover:bg-gray-100/20 rounded-md transition-all duration-200 px-5 lg:text-gray-900 font-semibold text-gray-200">
+          <span className="-translate-y-0.5">
+            <FaAppStore size={16} color={`${isMenuOpen ? "#fff" : "#000"}`} />
+          </span>
+          <span>Apps</span>
         </li>
       </NavLink>
       <NavLink to="/installation" onClick={handleNavLinkClick}>
-        <li className="py-2 lg:hover:bg-gray-200/50 hover:bg-gray-100/20 rounded-md transition-all duration-300 px-5 lg:text-gray-900 font-semibold text-gray-200">
-          Installation
+        <li className="py-3 flex items-center gap-1.5 border-b border-gray-500 lg:border-none lg:py-2 lg:hover:bg-gray-200/50 hover:bg-gray-100/20 rounded-md transition-all duration-200 px-5 lg:text-gray-900 font-semibold text-gray-200">
+          <span className="-translate-y-0.5">
+            <MdInstallDesktop
+              size={16}
+              color={`${isMenuOpen ? "#fff" : "#000"}`}
+            />
+          </span>
+          <span>Installation</span>
         </li>
       </NavLink>
     </>
@@ -68,7 +82,7 @@ const Navbar = () => {
           <span className="text-xl font-bold gradient-text">HERO.IO</span>
         </Link>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 space-x-2">{menuList}</ul>
+          <ul className="menu-horizontal space-x-1">{menuList}</ul>
         </div>
         <div className="navbar-end hidden lg:inline-flex">
           <a
