@@ -18,6 +18,5 @@ Explore a collection of amazing apps, view details, read descriptions, and manag
 - ⚛️ **React**
 - 🧩 **React Router**
 - 🧠 **JavaScript (ES6+)**
-- 📦 **Vite**
 
 ---
