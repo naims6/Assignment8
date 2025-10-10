@@ -3,7 +3,7 @@ import TrustedBy from "./TrustedBy";
 
 const Hero = () => {
   return (
-    <div className="bg-[#container2] min-h-screen">
+    <div className="bg-gray-100 min-h-screen pt-[80px]">
       <div className="container2 flex flex-col items-center justify-center text-center">
         <h1 className="text-5xl font-bold md:text-7xl w-full text-[#001931] pt-10 lg:pt-20 pb-6 lg:pb-4">
           <span>We Build</span>{" "}

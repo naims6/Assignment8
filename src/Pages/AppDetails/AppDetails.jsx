@@ -46,7 +46,7 @@ const AppDetails = () => {
   }
 
   return (
-    <div className="bg-base-200 pt-9 lg:pt-16">
+    <div className="bg-base-200 pt-20 lg:pt-26">
       <div className="flex gap-12 container2 flex-col lg:flex-row">
         <figure className="w-full max-w-[345px] lg:max-w-sm mx-auto rounded-lg">
           <img

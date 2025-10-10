@@ -24,7 +24,7 @@ const Installation = () => {
   };
 
   return (
-    <div className="bg-[#d9d9d9c9] min-h-[70vh]">
+    <div className="bg-gray-100 min-h-[70vh] pt-[4rem]">
       <div className="container2 pt-5 lg:pt-12 pb-8">
         <Title
           title="Your Installed Apps"

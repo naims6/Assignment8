@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 const NotFoundApp = () => {
   return (
-    <div className="container2 text-center col-span-full flex flex-col items-center justify-center gap-7">
+    <div className="container2 text-center col-span-full flex flex-col items-center justify-center gap-7 py-[4rem]">
       <figure className="mt-8">
         <img className="w-[350px]" src="/Images/App-Error.png" alt="" />
       </figure>

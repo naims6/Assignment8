@@ -1,11 +1,13 @@
 import React from "react";
 import { FaGithub } from "react-icons/fa";
 
-const MobileNavbar = ({ menuList, mobileNavRef }) => {
+const MobileNavbar = ({ menuList, mobileNavRef, isMenuOpen }) => {
   return (
     <div
       ref={mobileNavRef}
-      className="lg:hidden absolute top-full left-[150%] -translate-x-1/2 w-9/10 border border-gray-700 rounded-md bg-gray-800/90 backdrop-blur-md p-5 text-white transition-all duration-300 overflow-hidden"
+      className={`lg:hidden absolute top-full ${
+        isMenuOpen ? "left-1/2" : "left-[150%]"
+      } -translate-x-1/2 w-9/10 border border-gray-700 rounded-md bg-gray-800/90 backdrop-blur-md p-5 text-white transition-all duration-300 overflow-hidden`}
     >
       <ul className="space-y-6 ">{menuList}</ul>
       <div className=" block lg:hidden">

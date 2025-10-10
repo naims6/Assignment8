@@ -7,60 +7,55 @@ import MobileNavbar from "./MobileNavbar";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   // handle menu click
-  const mobileNavRef = useRef();
-  const handleMenuClick = () => {
-    setIsMenuOpen((prev) => !prev);
-    if (mobileNavRef.current.classList.contains("left-[150%]")) {
-      mobileNavRef.current.classList.remove("left-[150%]");
-      mobileNavRef.current.classList.add("left-1/2");
-    } else {
-      mobileNavRef.current.classList.remove("left-1/2");
-      mobileNavRef.current.classList.add("left-[150%]");
-    }
-  };
+  const mobileNavRef = useRef(null);
+  const menuButtonRef = useRef(null);
+
+  const handleMenuClick = () => setIsMenuOpen((prev) => !prev);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (isMenuOpen && !mobileNavRef.current.contains(event.target)) {
-        setIsMenuOpen((prev) => !prev);
-        mobileNavRef.current.classList.remove("left-1/2");
-        mobileNavRef.current.classList.add("left-[150%]");
+      if (
+        isMenuOpen &&
+        mobileNavRef.current &&
+        !mobileNavRef.current.contains(event.target) &&
+        menuButtonRef.current &&
+        !menuButtonRef.current.contains(event.target)
+      ) {
+        setIsMenuOpen(false);
       }
-      console.log(
-        isMenuOpen,
-        event.target,
-        mobileNavRef.current,
-        !mobileNavRef.current.contains(event.target)
-      );
     };
 
-    document.addEventListener("click", handleClickOutside);
+    document.addEventListener("click", handleClickOutside, true);
 
     return () => {
       document.removeEventListener("click", handleClickOutside);
     };
   }, [isMenuOpen]);
 
+  const handleNavLinkClick = () => setIsMenuOpen(false);
+
   const menuList = (
     <>
-      <NavLink to="/">
-        <li className="flex py-3 border-b border-gray-500 lg:border-none lg:py-2">
+      <NavLink to="/" onClick={handleNavLinkClick}>
+        <li className="flex py-3 border-b border-gray-500 lg:border-none lg:py-2 lg:hover:bg-gray-200/50 hover:bg-gray-100/20 rounded-md transition-all duration-300 px-5 lg:text-gray-900 font-semibold text-gray-200">
           Home
         </li>
       </NavLink>
-      <NavLink to="/apps">
-        <li className="py-3 border-b border-gray-500 lg:border-none lg:py-2">
+      <NavLink to="/apps" onClick={handleNavLinkClick}>
+        <li className="py-3 border-b border-gray-500 lg:border-none lg:py-2 lg:hover:bg-gray-200/50 hover:bg-gray-100/20 rounded-md transition-all duration-200 px-5 lg:text-gray-900 font-semibold text-gray-200">
           Apps
         </li>
       </NavLink>
-      <NavLink to="/installation">
-        <li className="py-2">Installation</li>
+      <NavLink to="/installation" onClick={handleNavLinkClick}>
+        <li className="py-2 lg:hover:bg-gray-200/50 hover:bg-gray-100/20 rounded-md transition-all duration-300 px-5 lg:text-gray-900 font-semibold text-gray-200">
+          Installation
+        </li>
       </NavLink>
     </>
   );
 
   return (
-    <div className="bg-base-100 shadow-sm relative">
+    <div className="bg-base-100/50 shadow-sm fixed w-full backdrop-blur-md z-50">
       <div className="flex w-full justify-between items-center min-h-[4rem] container2">
         <Link to="/" className="navbar-start cursor-pointer">
           <figure className="mr-0.5">
@@ -73,7 +68,7 @@ const Navbar = () => {
           <span className="text-xl font-bold gradient-text">HERO.IO</span>
         </Link>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 space-x-7">{menuList}</ul>
+          <ul className="menu menu-horizontal px-1 space-x-2">{menuList}</ul>
         </div>
         <div className="navbar-end hidden lg:inline-flex">
           <a
@@ -84,21 +79,29 @@ const Navbar = () => {
             <FaGithub /> <span>Contribute</span>
           </a>
         </div>
-        {isMenuOpen ? (
-          <MdClose
-            onClick={handleMenuClick}
-            className="lg:hidden cursor-pointer"
-            size={24}
-          />
-        ) : (
-          <MdMenu
-            onClick={handleMenuClick}
-            className="lg:hidden cursor-pointer"
-            size={24}
-          />
-        )}
+        <span ref={menuButtonRef}>
+          {isMenuOpen ? (
+            <MdClose
+              onClick={handleMenuClick}
+              className="lg:hidden cursor-pointer"
+              size={24}
+            />
+          ) : (
+            <span>
+              <MdMenu
+                onClick={handleMenuClick}
+                className="lg:hidden cursor-pointer"
+                size={24}
+              />
+            </span>
+          )}
+        </span>
       </div>
-      <MobileNavbar mobileNavRef={mobileNavRef} menuList={menuList} />
+      <MobileNavbar
+        mobileNavRef={mobileNavRef}
+        menuList={menuList}
+        isMenuOpen={isMenuOpen}
+      />
     </div>
   );
 };

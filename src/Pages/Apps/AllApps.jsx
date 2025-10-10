@@ -18,8 +18,6 @@ const AllApps = ({
     );
   }
 
-  console.log(searchLoading);
-
   if (searchLoading) {
     return (
       <div className="text-center mt-5">
