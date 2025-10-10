@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Title from "../../Components/Title";
 import { getFromDb } from "../../Utility/addToDB";
 import InstallAppCard from "./InstallAppCard";
+import Loading from "../Loading/Loading";
 
 const Installation = () => {
   const [installedApps, setInstalledApps] = useState(() => getFromDb());
+  const [loading, setLoading] = useState(true);
   const [sortType, setSortType] = useState("");
 
   const sortingApp = () => {
@@ -22,6 +24,12 @@ const Installation = () => {
       return installedApps;
     }
   };
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 200);
+  }, []);
 
   return (
     <div className="bg-gray-100 min-h-[70vh] pt-[4rem]">
@@ -52,6 +60,10 @@ const Installation = () => {
             <h1 className="text-center mt-4 col-span-full text-3xl">
               No Installed App Found.
             </h1>
+          ) : loading ? (
+            <div className="col-span-full">
+              <Loading />
+            </div>
           ) : (
             sortingApp().map((app, index) => (
               <InstallAppCard

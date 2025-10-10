@@ -1,13 +1,16 @@
 import React from "react";
 import { removeFromDb } from "../../Utility/addToDB";
 import { toast } from "react-toastify";
+import Loading from "../Loading/Loading";
 
-const InstallAppCard = ({ app, setInstalledApps, index }) => {
+const InstallAppCard = ({ app, setInstalledApps, index, loading }) => {
   const handleUnstallApp = () => {
     setInstalledApps(removeFromDb(app));
     toast.success(`${app.title} Unstalled`);
   };
-
+  if (loading) {
+    return <Loading />;
+  }
   const { image, title, downloads, size, ratingAvg } = app;
   return (
     <div className="bg-white p-3 rounded-xl flex justify-between items-center">

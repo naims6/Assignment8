@@ -1,4 +1,5 @@
 import AppsCard from "../../Components/AppsCard";
+import Loading from "../Loading/Loading";
 import NotFoundApp from "./NotFoundApp";
 import SearchNotFound from "./SearchNotFound";
 const AllApps = ({
@@ -9,13 +10,7 @@ const AllApps = ({
   searchLoading,
 }) => {
   if (isLoading) {
-    return (
-      <div className="text-center mt-5">
-        <h1 className="text-center font-bold text-6xl text-red-500">
-          LOADING...
-        </h1>
-      </div>
-    );
+    return <Loading />;
   }
 
   if (searchLoading) {

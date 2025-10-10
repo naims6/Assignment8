@@ -3,9 +3,12 @@ import { Link } from "react-router";
 
 const ErrorPage = () => {
   return (
-    <div className="container2 flex flex-col items-center justify-center gap-5">
-      <figure className="mt-6">
-        <img className="w-[450px]" src="/Images/error-404.png" alt="" />
+    <div className="container2 flex flex-col items-center justify-center gap-5 py-16">
+      <figure className="mt-6 w-full">
+        <img
+          className="w-[380px] lg:w-[450px] mx-auto"
+          src="/Images/error-404.png"
+        />
       </figure>
       <h1 className="text-bold text-5xl text-[#001931]">
         Oops, page not found!

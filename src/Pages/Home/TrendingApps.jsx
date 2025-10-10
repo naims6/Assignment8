@@ -3,6 +3,7 @@ import Title from "../../Components/Title";
 import { useYourData } from "../../Hooks/useYourData";
 import AppsCard from "../../Components/AppsCard";
 import { Link } from "react-router";
+import Loading from "../Loading/Loading";
 
 const TrendingApps = () => {
   const [appData, isLoading] = useYourData();
@@ -20,7 +21,7 @@ const TrendingApps = () => {
         </div>
 
         {isLoading ? (
-          <h1 className="text-center text-5xl text-red-600">Loading...</h1>
+          <Loading />
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7">
             {trendingApps.map((app) => (

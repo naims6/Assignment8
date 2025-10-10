@@ -11,7 +11,11 @@ const useYourData = () => {
       .then((res) => res.json())
       .then((d) => setData(d))
       .catch((e) => setErr(e))
-      .finally(setLoading(false));
+      .finally(
+        setTimeout(() => {
+          setLoading(false);
+        }, 200)
+      );
   }, []);
 
   return [data, loading, err];

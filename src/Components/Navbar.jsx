@@ -38,25 +38,37 @@ const Navbar = () => {
 
   const menuList = (
     <>
-      <NavLink to="/" onClick={handleNavLinkClick}>
-        <li className="py-3 flex items-center gap-1.5 border-b border-gray-500 lg:border-none lg:py-2 lg:hover:bg-gray-200/50 hover:bg-gray-100/20 rounded-md transition-all duration-200 px-5 lg:text-gray-900 font-semibold text-gray-200">
-          <span className="-translate-y-0.5">
+      <NavLink
+        to="/"
+        onClick={handleNavLinkClick}
+        className="lg:text-gray-900 font-semibold text-gray-200"
+      >
+        <li className="py-3 flex items-center gap-1.5 border-b border-gray-500 lg:border-none lg:py-2 lg:hover:bg-gray-200/50 hover:bg-gray-100/20 rounded-md transition-all duration-200 px-5">
+          <span>
             <CgHome size={15} color={`${isMenuOpen ? "#fff" : "#000"}`} />
           </span>
           <span>Home</span>
         </li>
       </NavLink>
-      <NavLink to="/apps" onClick={handleNavLinkClick}>
-        <li className="py-3 flex items-center gap-1.5 border-b border-gray-500 lg:border-none lg:py-2 lg:hover:bg-gray-200/50 hover:bg-gray-100/20 rounded-md transition-all duration-200 px-5 lg:text-gray-900 font-semibold text-gray-200">
-          <span className="-translate-y-0.5">
+      <NavLink
+        to="/apps"
+        onClick={handleNavLinkClick}
+        className="lg:text-gray-900 font-semibold text-gray-200"
+      >
+        <li className="py-3 flex items-center gap-1.5 border-b border-gray-500 lg:border-none lg:py-2 lg:hover:bg-gray-200/50 hover:bg-gray-100/20 rounded-md transition-all duration-200 px-5">
+          <span>
             <FaAppStore size={16} color={`${isMenuOpen ? "#fff" : "#000"}`} />
           </span>
           <span>Apps</span>
         </li>
       </NavLink>
-      <NavLink to="/installation" onClick={handleNavLinkClick}>
-        <li className="py-3 flex items-center gap-1.5 border-b border-gray-500 lg:border-none lg:py-2 lg:hover:bg-gray-200/50 hover:bg-gray-100/20 rounded-md transition-all duration-200 px-5 lg:text-gray-900 font-semibold text-gray-200">
-          <span className="-translate-y-0.5">
+      <NavLink
+        to="/installation"
+        onClick={handleNavLinkClick}
+        className="lg:text-gray-900 font-semibold text-gray-200"
+      >
+        <li className="py-3 flex items-center gap-1.5 border-b border-gray-500 lg:border-none lg:py-2 lg:hover:bg-gray-200/50 hover:bg-gray-100/20 rounded-md transition-all duration-200 px-5">
+          <span>
             <MdInstallDesktop
               size={16}
               color={`${isMenuOpen ? "#fff" : "#000"}`}
