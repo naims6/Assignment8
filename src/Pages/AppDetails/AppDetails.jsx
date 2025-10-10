@@ -41,6 +41,12 @@ const AppDetails = () => {
     size,
   } = matchedApp;
 
+  useEffect(() => {
+    if (title) {
+      document.title = `${title} - App Details`;
+    }
+  }, [title]);
+
   if (!isFound) {
     return <NotFoundApp />;
   }

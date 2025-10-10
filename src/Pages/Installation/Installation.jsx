@@ -33,6 +33,7 @@ const Installation = () => {
 
   return (
     <div className="bg-gray-100 min-h-[70vh] pt-[4rem]">
+      <title>Installation</title>
       <div className="container2 pt-5 lg:pt-12 pb-8">
         <Title
           title="Your Installed Apps"

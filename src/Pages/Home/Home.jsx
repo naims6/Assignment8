@@ -6,6 +6,7 @@ import Hero from "./Hero/Hero";
 const Home = () => {
   return (
     <div>
+      <title>Home | Hero App Store</title>
       <Hero />
       <TrendingApps />
     </div>

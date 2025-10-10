@@ -31,6 +31,7 @@ const Apps = () => {
 
   return (
     <div className="bg-gray-100 pt-[4rem]">
+      <title>Apps | Hero App Store</title>
       <div className="container2 py-5 lg:py-10">
         <Title
           title="Our All Applications"

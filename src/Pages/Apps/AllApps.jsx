@@ -9,19 +9,8 @@ const AllApps = ({
   searchingApp,
   searchLoading,
 }) => {
-  if (isLoading) {
-    return <Loading />;
-  }
-
-  if (searchLoading) {
-    return (
-      <div className="text-center mt-5">
-        <h1 className="text-center font-bold text-6xl text-green-500">
-          LOADING...
-        </h1>
-      </div>
-    );
-  }
+  if (isLoading) return <Loading />;
+  if (searchLoading) return <Loading />;
 
   return (
     <div className="pt-6 lg:pt-10 pb-5 lg:pb-6 container2">
