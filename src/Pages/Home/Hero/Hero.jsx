@@ -17,25 +17,23 @@ const Hero = () => {
           into digital experiences that truly make an impact.
         </p>
         <div className="flex gap-2 pb-10">
-          <button className="flex items-center justify-center p-4 py-5 rounded-md gap-2 border border-gray-100 btn font-semibold hover:shadow-md transition-all duration-300">
+          <a
+            className="flex items-center justify-center p-4 py-6 rounded-md gap-2 border border-gray-100 btn font-semibold hover:shadow-md transition-all duration-300 bg-gray-200"
+            href="https://play.google.com/store/games?hl=en"
+            target="blank"
+          >
             <img src="/Images/playstore.png" alt="" />
-            <span>
-              <a
-                href="https://play.google.com/store/games?hl=en"
-                target="blank"
-              >
-                Google Play
-              </a>
-            </span>
-          </button>
-          <button className="flex items-center justify-center p-4 py-5 rounded-md gap-2 border border-gray-100 btn font-semibold hover:shadow-md transition duration-300">
+            <button>Google Play</button>
+          </a>
+
+          <a
+            className="flex items-center justify-center p-4 py-6 rounded-md gap-2 border border-gray-100 btn font-semibold hover:shadow-md transition duration-300 bg-gray-200"
+            href="https://www.apple.com/app-store/"
+            target="blank"
+          >
             <img src="/Images/herostore.png" alt="" />
-            <span>
-              <a href="https://www.apple.com/app-store/" target="blank">
-                App Store
-              </a>
-            </span>
-          </button>
+            <button>App Store</button>
+          </a>
         </div>
         <div>
           <img src="/Images/hero.png" alt="" />
